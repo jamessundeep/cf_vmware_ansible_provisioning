@@ -26,12 +26,12 @@
   async: "{{ async_wait }}"
   poll: "{{ async_poll }}"
 
-- name: Wait for asynchronous job to complete
-  async_status: jid={{ item.ansible_job_id }}
-  register: vmware_created_vms
-  until: vmware_created_vms.finished
-  retries: "{{ async_retries }}"
-  with_items: "{{ vmware_created_vms_async.results }}"
+#- name: Wait for asynchronous job to complete
+#  async_status: jid={{ item.ansible_job_id }}
+#  register: vmware_created_vms
+#  until: vmware_created_vms.finished
+#  retries: "{{ async_retries }}"
+#  with_items: "{{ vmware_created_vms_async.results }}"
 
 - name: Log item.instance.ipv4
   debug:
